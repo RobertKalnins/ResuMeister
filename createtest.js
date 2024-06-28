@@ -40,23 +40,12 @@ resumeDoc.moveDown(2);
 
 // Add a section header with a colored vector line
 const addSectionHeader = (doc, title) => {
-    // Measure the width of the text
-    const textWidth = doc.widthOfString(title);
-
-    // Add the section header text
     doc.fontSize(13).font('Helvetica-Bold').text(title, { continued: true });
-
-    // Add the vector line directly under the text
-    const startX = doc.x; // Start position of the text
-    const startY = doc.y; // Y position right after the text
-
     doc.strokeColor('#800020') // Burgundy color hex code
        .lineWidth(1)
-       .moveTo(startX, startY + 5) // Start of the line
-       .lineTo(startX + textWidth, startY + 5) // End of the line
+       .moveTo(doc.x, doc.y + 15) // Ensuring the line is placed right below the text
+       .lineTo(550, doc.y + 5)
        .stroke();
-
-    // Move down to create space between the header and the following content
     doc.moveDown(2);
 };
 
