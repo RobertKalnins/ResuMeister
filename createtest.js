@@ -44,7 +44,7 @@ const addSectionHeader = (doc, title) => {
     doc.strokeColor('#800020') // Burgundy color hex code
        .lineWidth(1)
        .moveTo(doc.x, doc.y + 15) // Ensuring the line is placed right below the text
-       .lineTo(550, doc.y + 5)
+       .lineTo(550, doc.y + 15)
        .stroke();
     doc.moveDown(2);
 };
