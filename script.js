@@ -82,8 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('results-prev').addEventListener('click', prevStage);
 
     document.getElementById('download-resume').addEventListener('click', function() {
-        alert('Resume downloaded!');
-        // Add logic to generate and download the resume PDF
+        generatePDF();
     });
 
     function displayResults() {
