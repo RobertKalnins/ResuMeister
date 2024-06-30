@@ -13,7 +13,7 @@ function addMultilineText(doc, textArray, bullet = false, isBold = false) {
     } else {
         doc.font('Helvetica');
     }
-
+    doc.fontSize(12);
     textArray.forEach(line => {
         line = line.trim(); // Trim each line to avoid unwanted whitespace
         if (line.length > 0) { // Only add non-empty lines
@@ -42,7 +42,7 @@ resumeDoc.moveDown(1);
 // Add a section header with a colored vector line
 const addSectionHeader = (doc, title) => {
     doc.moveDown(0.5);
-    doc.fontSize(12).font('Helvetica-Bold').text(title, { continued: false });
+    doc.fontSize(13).font('Helvetica-Bold').text(title, { continued: false });
     doc.strokeColor('#800020') // Burgundy color hex code
     .lineWidth(1)
     // Move to the starting point of the line (left margin)

@@ -1,7 +1,6 @@
 Juking on fences
 Zero to Hero 100% sprinters
-Dota1
-Dota2
+Dota
 CounterStrike
 Project Zomboid
 Zomboid Server Administration
