@@ -51,11 +51,13 @@ document.addEventListener('DOMContentLoaded', function() {
             localStorage.setItem(section.charAt(0).toUpperCase() + section.slice(1), JSON.stringify(entries));
         });
 
+        /*
         // Automatically add default values for debugging
         for (let i = 0; i < limit; i++) {
             const input = `Default ${section} ${i + 1}`;
             entries.push(input);
         }
+        */
         updateEntriesList();
     }
 
