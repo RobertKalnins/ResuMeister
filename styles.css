@@ -133,3 +133,16 @@ img {
     75% { transform: translateX(-5px); }
     100% { transform: translateX(0); }
 }
+
+.stage {
+    display: none;
+}
+
+.active-stage {
+    display: block;
+}
+
+#introduction {
+    text-align: center;
+    padding: 20px;
+}
