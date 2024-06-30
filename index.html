@@ -9,91 +9,60 @@
     <div id="introduction" class="stage active-stage">
         <h2>Resumeister</h2>
         <p>A website that makes custom resumes using your own words</p>
-        <p>Keep your profile current. Paste a job ad whenever. Get a tailored resume in 5 seconds.</p>
-        <p><strong>Why?</strong></p>
-        <p>Toil sucks. Toil when you need $ to live sucks more. The world is full of a bunch of fake jobs adverts that you have to get past to find real opportunities.</p>
         <button id="skip-intro">Alright... I'll bite - tell me more</button>
     </div>
 
     <div id="skills" class="stage">
         <h2>Skills</h2>
-        <input type="text" id="skills-input" placeholder="Tell me all your skills - write it like it's lines on a resume">
+        <input type="text" id="skills-input" placeholder="Enter a skill">
         <button id="add-skills">Add Skill</button>
         <ul id="skills-list"></ul>
-        <div class="navigation-buttons">
-            <button id="skills-next" disabled>Next</button>
-        </div>
+        <button id="skills-next" disabled>Next</button>
     </div>
 
     <div id="education" class="stage">
         <h2>Education</h2>
-        <input type="text" id="education-input" placeholder="Tell me all your education - two lines each">
+        <input type="text" id="education-input" placeholder="Enter an education detail">
         <button id="add-education">Add Education</button>
         <ul id="education-list"></ul>
-        <div class="navigation-buttons">
-            <button id="education-prev">Previous</button>
-            <button id="education-next" disabled>Next</button>
-        </div>
+        <button id="education-next" disabled>Next</button>
     </div>
 
     <div id="experience" class="stage">
         <h2>Experience</h2>
-        <input type="text" id="experience-input" placeholder="Tell me all your experience - two lines each">
+        <input type="text" id="experience-input" placeholder="Enter an experience detail">
         <button id="add-experience">Add Experience</button>
         <ul id="experience-list"></ul>
-        <div class="navigation-buttons">
-            <button id="experience-prev">Previous</button>
-            <button id="experience-next" disabled>Next</button>
-        </div>
+        <button id="experience-next" disabled>Next</button>
     </div>
 
     <div id="hobbies" class="stage">
         <h2>Hobbies</h2>
-        <input type="text" id="hobbies-input" placeholder="Tell me all your hobbies - max three words each :)">
+        <input type="text" id="hobbies-input" placeholder="Enter a hobby">
         <button id="add-hobbies">Add Hobby</button>
         <ul id="hobbies-list"></ul>
-        <div class="navigation-buttons">
-            <button id="hobbies-prev">Previous</button>
-            <button id="hobbies-next" disabled>Next</button>
-        </div>
+        <button id="hobbies-next" disabled>Next</button>
     </div>
 
     <div id="job-ad" class="stage">
         <h2>Job Advert</h2>
         <textarea id="job-ad-input" placeholder="Paste a job advert here"></textarea>
-        <div class="navigation-buttons">
-            <button id="job-ad-prev">Previous</button>
-            <button id="job-ad-next">Next</button>
-        </div>
+        <button id="job-ad-next">Next</button>
     </div>
 
     <div id="processing" class="stage">
         <h2>Processing</h2>
         <p>Processing your profile...</p>
-        <div class="navigation-buttons">
-            <button id="processing-prev">Previous</button>
-            <button id="processing-next">Next</button>
-        </div>
+        <button id="processing-next">Next</button>
     </div>
 
     <div id="results" class="stage">
         <h2>Results</h2>
-        <p>These are your closest 5 skills:</p>
-        <ul id="skills-list"></ul>
-        <p>These are your most relevant experiences:</p>
-        <ul id="experience-list"></ul>
-        <p>These are your relevant hobbies:</p>
-        <ul id="hobbies-list"></ul>
-        <p>They are looking for this kind of person:</p>
-        <p id="description"></p>
-        <div class="navigation-buttons">
-            <button id="results-prev">Previous</button>
-            <button id="download-resume">Download Resume</button>
-        </div>
+        <p>These are your collected details:</p>
+        <ul id="results-list"></ul>
+        <button id="download-resume">Download Resume</button>
     </div>
 
     <script src="script.js"></script>
-
-    <p class="credit">background photo by <a href="https://unsplash.com/@paulearlephotography?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">paul earle</a> on <a href="https://unsplash.com/photos/mountain-dew-during-sunrise-xJ2tjuUHD9M?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">unsplash</a></p>
 </body>
 </html>
