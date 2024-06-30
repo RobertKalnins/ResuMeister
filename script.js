@@ -15,6 +15,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    function prevStage() {
+        if (currentStageIndex > 0) {
+            currentStageIndex--;
+            showStage(currentStageIndex);
+        }
+    }
+
     function recordDetails(section, limit, linesPerEntry, isWordLimit) {
         let entries = [];
 
@@ -42,7 +49,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         document.getElementById(`${section}-next`).addEventListener('click', function() {
             localStorage.setItem(section.charAt(0).toUpperCase() + section.slice(1), JSON.stringify(entries));
-            nextStage();
         });
 
         // Automatically add default values for debugging
@@ -56,13 +62,28 @@ document.addEventListener('DOMContentLoaded', function() {
     recordDetails('skills', 5, 1, false);
     recordDetails('education', 5, 2, false);
     recordDetails('experience', 5, 2, false);
-    recordDetails('hobbies', 5, 1, true);
+    recordDetails('hobbies', 3, 1, true);
 
     document.getElementById('skip-intro').addEventListener('click', nextStage);
+    document.getElementById('skills-next').addEventListener('click', nextStage);
+    document.getElementById('education-prev').addEventListener('click', prevStage);
+    document.getElementById('education-next').addEventListener('click', nextStage);
+    document.getElementById('experience-prev').addEventListener('click', prevStage);
+    document.getElementById('experience-next').addEventListener('click', nextStage);
+    document.getElementById('hobbies-prev').addEventListener('click', prevStage);
+    document.getElementById('hobbies-next').addEventListener('click', nextStage);
+    document.getElementById('job-ad-prev').addEventListener('click', prevStage);
     document.getElementById('job-ad-next').addEventListener('click', nextStage);
-    document.getElementById('processing-next').addEventListener('click', function() {
+    document.getElementById('processing-prev').addEventListener('click', prevStage);
+    document.getElementById('processing-next').addEventListener('click', () => {
         nextStage();
         displayResults();
+    });
+    document.getElementById('results-prev').addEventListener('click', prevStage);
+
+    document.getElementById('download-resume').addEventListener('click', function() {
+        alert('Resume downloaded!');
+        // Add logic to generate and download the resume PDF
     });
 
     function displayResults() {

@@ -17,7 +17,7 @@
         <input type="text" id="skills-input" placeholder="Enter a skill">
         <button id="add-skills">Add Skill</button>
         <ul id="skills-list"></ul>
-        <button id="skills-next" disabled>Next</button>
+        <button id="skills-next" disabled>Next - edu</button>
     </div>
 
     <div id="education" class="stage">
@@ -25,7 +25,8 @@
         <input type="text" id="education-input" placeholder="Enter an education detail">
         <button id="add-education">Add Education</button>
         <ul id="education-list"></ul>
-        <button id="education-next" disabled>Next</button>
+        <button id="education-prev">Back</button>
+        <button id="education-next" disabled>Next - experience</button>
     </div>
 
     <div id="experience" class="stage">
@@ -33,7 +34,8 @@
         <input type="text" id="experience-input" placeholder="Enter an experience detail">
         <button id="add-experience">Add Experience</button>
         <ul id="experience-list"></ul>
-        <button id="experience-next" disabled>Next</button>
+        <button id="experience-prev">Back</button>
+        <button id="experience-next" disabled>Next - hobbies</button>
     </div>
 
     <div id="hobbies" class="stage">
@@ -41,18 +43,21 @@
         <input type="text" id="hobbies-input" placeholder="Enter a hobby">
         <button id="add-hobbies">Add Hobby</button>
         <ul id="hobbies-list"></ul>
-        <button id="hobbies-next" disabled>Next</button>
+        <button id="hobbies-prev">Back</button>
+        <button id="hobbies-next" disabled>Next - paste ad</button>
     </div>
 
     <div id="job-ad" class="stage">
         <h2>Job Advert</h2>
         <textarea id="job-ad-input" placeholder="Paste a job advert here"></textarea>
+        <button id="job-ad-prev">Back</button>
         <button id="job-ad-next">Next</button>
     </div>
 
     <div id="processing" class="stage">
         <h2>Processing</h2>
         <p>Processing your profile...</p>
+        <button id="processing-prev">Back</button>
         <button id="processing-next">Next</button>
     </div>
 
@@ -60,6 +65,7 @@
         <h2>Results</h2>
         <p>These are your collected details:</p>
         <ul id="results-list"></ul>
+        <button id="results-prev">Back</button>
         <button id="download-resume">Download Resume</button>
     </div>
 
