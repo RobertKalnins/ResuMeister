@@ -21,9 +21,10 @@ function addMultilineText(doc, textArray, bullet = false, isBold = false) {
                 line = `• ${line}`;
             }
             doc.text(line, { align: 'left' });
-            doc.moveDown(1); // Increase the line spacing
+            doc.moveDown(0.5); // Increase the line spacing
         }
     });
+    //doc.moveDown(1);
 }
 
 // Create a new PDF document with customized margins and page size
@@ -34,18 +35,21 @@ resumeDoc.pipe(fs.createWriteStream('resume.pdf'));
 resumeDoc.font('Helvetica');
 
 // Header with name and contact info, emphasized at the top
-resumeDoc.fontSize(18).font('Helvetica-Bold').text('Your Name', { align: 'center' });
-resumeDoc.fontSize(11).font('Helvetica').text('Address | Email | Phone', { align: 'center' });
-resumeDoc.moveDown(2);
+resumeDoc.fontSize(15).font('Helvetica-Bold').text('Your Name', { align: 'center' });
+resumeDoc.fontSize(10).font('Helvetica').text('Address | Email | Phone', { align: 'center' });
+resumeDoc.moveDown(1);
 
 // Add a section header with a colored vector line
 const addSectionHeader = (doc, title) => {
-    doc.fontSize(13).font('Helvetica-Bold').text(title, { continued: true });
+    doc.moveDown(0.5);
+    doc.fontSize(12).font('Helvetica-Bold').text(title, { continued: false });
     doc.strokeColor('#800020') // Burgundy color hex code
-       .lineWidth(1)
-       .moveTo(doc.x, doc.y + 15) // Ensuring the line is placed right below the text
-       .lineTo(550, doc.y + 15)
-       .stroke();
+    .lineWidth(1)
+    // Move to the starting point of the line (left margin)
+    .moveTo(doc.page.margins.left, doc.y)
+    // Draw line to the ending point (right margin)
+    .lineTo(doc.page.width - doc.page.margins.right, doc.y)
+    .stroke();
     doc.moveDown(2);
 };
 
@@ -68,7 +72,7 @@ Object.keys(sections).forEach(section => {
 // Finalize the PDF and ensure proper closure of the document
 resumeDoc.end();
 
-
+/*
 // Create a new PDF document with customized margins and page size for the cover letter
 const coverDoc = new PDFDocument({ margin: 50 });
 coverDoc.pipe(fs.createWriteStream('coverletter.pdf'));
@@ -99,3 +103,4 @@ coverDoc.fontSize(11).font('Helvetica').text('john.doe@example.com', { align: 'l
 
 // Finalize Cover Letter PDF
 coverDoc.end();
+*/
