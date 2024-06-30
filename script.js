@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('results-prev').addEventListener('click', prevStage);
 
     document.getElementById('download-resume').addEventListener('click', function() {
-        generatePDF();
+        generatePdf();
     });
 
     function displayResults() {
