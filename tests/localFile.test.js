@@ -1,7 +1,14 @@
 const { test, expect } = require('@playwright/test');
 const path = require('path');
 
-test('run local file and interact with form', async ({ page }) => {
+test('run local file and interact with form', async ({ page, browserName }) => {
+  // Load test details
+  const uuid = process.env.TEST_UUID;
+  const timestamp = process.env.TEST_TIMESTAMP;
+  const downloadDir = process.env.DOWNLOAD_DIR;
+  console.log(`Running test in ${browserName} at ${timestamp} with unique ID: ${uuid}`);
+  
+  // Set filepath for page
   const filePath = path.resolve(__dirname, '../docs/index.html');
   const fileUrl = `file://${filePath}`;
 
@@ -70,6 +77,6 @@ test('run local file and interact with form', async ({ page }) => {
 
   // Wait for the download process to complete and save the downloaded file
   const download = await downloadPromise;
-  const downloadPath = path.resolve(__dirname, '../test-results', download.suggestedFilename());
+  const downloadPath = path.resolve(downloadDir, `browser_resume_${browserName}.pdf`);
   await download.saveAs(downloadPath);
 });

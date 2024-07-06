@@ -7,8 +7,8 @@
     "doc": "docs"
   },
   "scripts": {
-	  "test" : "playwright test",
-	  "test-head": "playwright test --headed"
+    "test": "playwright test",
+    "test-head": "playwright test --headed"
   },
   "keywords": [],
   "author": "",
@@ -16,5 +16,8 @@
   "devDependencies": {
     "@playwright/test": "^1.45.1",
     "@types/node": "^20.14.10"
+  },
+  "dependencies": {
+    "uuid": "^10.0.0"
   }
 }
