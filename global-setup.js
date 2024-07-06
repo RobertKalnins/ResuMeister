@@ -5,7 +5,7 @@ const path = require('path');
 module.exports = async () => {
   const uuid = uuidv4();
   const timestamp = new Date().toISOString().replace(/[-:.]/g, '');
-  const downloadDir = path.resolve(__dirname, 'test-results', `${timestamp}_${uuid}`);
+  const downloadDir = path.resolve(__dirname, 'test-resumes', `${timestamp}_${uuid}`);
 
   // Store the UUID, timestamp and download dir in environment variables
   process.env.TEST_UUID = uuid;
