@@ -1,20 +1,6 @@
 const { test, expect } = require('@playwright/test');
 const path = require('path');
 
-test('run local file', async ({ page }) => {
-  const filePath = path.resolve(__dirname, '../docs/index.html');
-  const fileUrl = `file://${filePath}`;
-
-  // Navigate to the local file
-  await page.goto(fileUrl);
-
-  // Perform your test actions here
-  // For example, check if the page title is correct
-  await expect(page).toHaveTitle('Resumeister');
-
-  // Add more assertions and interactions as needed
-});
-
 test('run local file and interact with form', async ({ page }) => {
   const filePath = path.resolve(__dirname, '../docs/index.html');
   const fileUrl = `file://${filePath}`;
@@ -78,6 +64,12 @@ test('run local file and interact with form', async ({ page }) => {
   await page.waitForSelector('#processing-next');
   await page.click('#processing-next');
 
-  // Download the resume
+  // Start waiting for download before clicking the download button
+  const downloadPromise = page.waitForEvent('download');
   await page.click('#download-resume');
+
+  // Wait for the download process to complete and save the downloaded file
+  const download = await downloadPromise;
+  const downloadPath = path.resolve(__dirname, '../test-results', download.suggestedFilename());
+  await download.saveAs(downloadPath);
 });
